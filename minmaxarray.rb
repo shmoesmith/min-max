@@ -1,24 +1,14 @@
+require 'pry'
 
-@numberbank = []
-@clone_bank = @number.clone.
-
+@clone_bank = []
+@result = 0
 
 
 def test_array_max
-        while @clone_bank.first > @clone_bank.last
-                @clone_bank.pop
-        end
-        while @clone_bank.last > @clone_bank.first
-                @clone_bank.shift
-        end
-        puts @clone_bank
-
-
+    @clone_bank.each {|number| number = @result if @result <= number}
+    puts "your max is #{@result}"
 end
-
-def test_array_min
-end
-
+       
 
 def enter_array
     puts "Enter the number you would like to include in your array.  When complete type 'done'"
@@ -26,10 +16,10 @@ def enter_array
     array_number = gets.chomp
     
         if /\d+/.match(array_number)
-            array_number.to_i
-            @numberbank << array_number
+           
+            @clone_bank <<  array_number.to_i
             enter_array
-        elseif
+        elsif
             array_number == "done"
                 welcome_menu
         else
